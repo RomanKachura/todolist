@@ -9,7 +9,7 @@ function App() {
     const [value, setValue] = useState('');
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const addTask = (tID: string) => {
-        axios.post(`http://localhost:3010/todolist/${tID}`, {task: {title: newTaskTitle, isDone: false}});
+        axios.post(`http://localhost:3010/todolist/${tID}`, {title: newTaskTitle});
     }
     const getOneTask = (tlID: string) => {
         axios.get(`http://localhost:3010/todolist/${tlID}/tasks/6333407090a135f319f23023`).then(res => {
