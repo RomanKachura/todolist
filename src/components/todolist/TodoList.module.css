@@ -1,0 +1,66 @@
+.todolist {
+    min-height: 400px;
+    min-width: 400px;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.paper {
+    width: 100%;
+    height: 100%;
+}
+
+.addItem{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 20px;
+    height: 50px;
+}
+
+.input {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.input > div {
+    height: 100%;
+}
+
+.input label{
+    padding: 0;
+    line-height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: auto;
+    width: auto;
+}
+
+.input input {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.header{
+    padding: 10px 20px;
+}
+
+.deleteButton{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.buttonBlock{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.buttonBlock button{
+    margin-right: 10px;
+}
