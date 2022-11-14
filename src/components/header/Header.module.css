@@ -1,0 +1,72 @@
+.header {
+    height: 10%;
+    padding: 0 30px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.accountBlock {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.menu {
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    opacity: 0;
+    transition: .3s all;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.openMenu {
+    opacity: 1;
+    height: auto;
+    width: auto;
+    overflow: visible;
+}
+
+.menuList {
+    background: #fcfcfc;
+}
+
+.menuLink {
+    color:#777;
+    text-decoration: none;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: .5s all;
+    color: #fff;
+}
+
+.link > * {
+    width: 100%;
+    height: 100%;
+}
+
+.link:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.link:active {
+    color: rgba(255, 255, 255, .7);
+}

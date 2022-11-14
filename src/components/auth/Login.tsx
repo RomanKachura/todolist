@@ -6,16 +6,12 @@ import {RootState, useAppDispatch} from '../../store/store';
 import {Navigate, NavLink} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {Formik} from 'formik';
-import {AuthResponseType} from '../../api/authApi';
 
 export const Login: React.FC = () => {
     const isAuth = useSelector<RootState, boolean>(state => state.auth.isAuth);
     const dispatch = useAppDispatch();
     if (isAuth) {
         return <Navigate to={'/todolist'}/>
-    }
-    const onSubmit = () => {
-        console.log('123')
     }
 
     return (
