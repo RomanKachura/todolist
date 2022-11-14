@@ -24,38 +24,30 @@ export const TodoListContainer: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const addTodoList = (title: string) => dispatch(addTodoListThunk({title, todolists: authData.user.todolists}));
-
-
     const removeTodoList = (id: string) => dispatch(removeTodoListThunk({id, todolists: authData.user.todolists}));
-
-
     const changeTodoListTitle = (id: string, title: string) => dispatch(changeTodoListTitleThunk({
         id,
         title,
         todolists: authData.user.todolists
     }));
-
-
     const addTask = (tid: string, title: string) => dispatch(addTaskThunk({
         todolists: authData.user.todolists,
         tid,
         title
     }));
-
-
     const removeTask = (tid: string, id: string) => dispatch(removeTaskThunk({
         todolists: authData.user.todolists,
         tid,
         id
     }));
-
-    const updateTask = (tid: string, id: string, title: string, isDone: boolean) => dispatch(updateTaskThunk({
+    const updateTask = (tid: string, id: string, title: string, describe: string, isDone: boolean) => dispatch(updateTaskThunk({
         todolists: authData.user.todolists,
         tid,
         id,
         title,
-        isDone
-    }))
+        isDone, describe
+    }));
+
 
     useEffect(() => {
         if (authData) {

@@ -1,17 +1,25 @@
-.task {
-    margin: 5px 0 0 0;
+.appDescribe {
+    width: 100%;
+    background: #f5ede8;
 }
 
-.item {
+.appDescribeHeader {
+    height: 50px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 10px 0 20px;
 }
 
-.checkedTask {
-    color: grey;
-    text-decoration: line-through;
+.appDescribeTitle {
+    transition: .4s all, .4s opacity;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.appDescribeTitleOpen {
+    opacity: 0;
 }
 
 .buttonBlock {
@@ -20,16 +28,16 @@
     align-items: center;
 }
 
-.describe {
+.appDescribeBody {
     height: 0;
-    background: #f5ede8;
+    border-top: 1px solid #e7e7e7;
     padding: 0 20px;
     transition: .4s all, .4s opacity;
     opacity: 0;
     overflow: hidden;
 }
 
-.describeOpen {
+.appDescribeBodyOpen {
     height: auto;
     opacity: 1;
     padding: 20px;

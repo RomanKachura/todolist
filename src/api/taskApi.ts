@@ -11,8 +11,8 @@ export const taskApi = {
         const {todolists, tid, id} = data;
         return $api.delete(`todolist/${todolists}/${tid}/tasks/${id}`);
     },
-    updateTask(data: { todolists: string, tid: string, id: string, title: string, isDone: boolean }) {
-        const {todolists, tid, id, title, isDone} = data;
-        return $api.put(`todolist/${todolists}/${tid}/tasks/${id}`, {title, isDone});
+    updateTask(data: { todolists: string, tid: string, id: string, title: string, describe: string, isDone: boolean }) {
+        const {todolists, tid, id, title, isDone, describe} = data;
+        return $api.put(`todolist/${todolists}/${tid}/tasks/${id}`, {title, isDone, describe});
     }
 }

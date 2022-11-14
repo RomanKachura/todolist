@@ -24,7 +24,9 @@ export const AppTitle: React.FC<AppTitlePropsType> = ({title, callBack, checked}
     return (
         <div className={s.appTitle}>
             {!editMode
-                ? <h3 className={checked ? s.checkedTask : ''} onDoubleClick={() => setEditMode(true)}>{title}</h3>
+                ? <h3 className={checked ? s.checkedTask : ''} onDoubleClick={() => setEditMode(true)}>
+                    {title.length > 15 ? `${title.slice(0,15)}...` : title}
+            </h3>
                 : <TextField
                     autoFocus
                     error={value.length < 1 || value.length > 50}

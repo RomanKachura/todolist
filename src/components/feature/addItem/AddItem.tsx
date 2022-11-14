@@ -1,6 +1,6 @@
-import {Button, IconButton, TextField} from '@material-ui/core';
-import React, {ChangeEvent, useState} from 'react';
-import {Add, AddCircle} from '@material-ui/icons';
+import {IconButton, TextField} from '@material-ui/core';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import {AddCircle} from '@material-ui/icons';
 import s from './AddItem.module.css';
 
 export const AddItem: React.FC<AddItemPropsType> = ({callBack, className, textFieldClassName}) => {
@@ -16,6 +16,11 @@ export const AddItem: React.FC<AddItemPropsType> = ({callBack, className, textFi
             setValue('');
         }
     };
+
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter') onClickHandler();
+        if (e.key === 'Escape') setValue('');
+    }
     return (
         <div className={`${className} ${s.addItem}`}>
             <TextField
@@ -27,6 +32,7 @@ export const AddItem: React.FC<AddItemPropsType> = ({callBack, className, textFi
                 name="title"
                 onChange={handleChange}
                 value={value}
+                onKeyDown={onKeyPressHandler}
             />
             <IconButton
                 color={'primary'}

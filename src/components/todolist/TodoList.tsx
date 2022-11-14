@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Task} from '../task/Task';
 import {Button, Grid, IconButton, Paper} from '@material-ui/core';
 import s from './TodoList.module.css';
-import {Delete} from '@material-ui/icons';
+import {Clear} from '@material-ui/icons';
 import {AppTitle} from '../feature/appTitle/AppTitle';
 import {AddItem} from '../feature/addItem/AddItem';
 import {TaskDataType} from '../../store/reducers/todolistReducer';
@@ -25,7 +25,7 @@ export const TodoList: React.FC<TodoListPropsType> = (
     const changeTodoListTitle = (title: string) => changeTodoListTitleCallBack(tid, title);
     const addTask = (title: string) => addTaskCallBack(tid, title);
     const removeTask = (id: string) => removeTaskCallBack(tid, id);
-    const updateTask = (id: string, title: string, isDone: boolean) => updateTaskCallBack(tid, id, title, isDone);
+    const updateTask = (id: string, title: string, describe: string, isDone: boolean) => updateTaskCallBack(tid, id, title, describe, isDone);
     let filterTasks: TaskDataType[] = tasks;
     if (filter === 'COMPLETE') filterTasks = tasks.filter(t => t.isDone);
     if (filter === 'ACTIVE') filterTasks = tasks.filter(t => !t.isDone);
@@ -38,7 +38,7 @@ export const TodoList: React.FC<TodoListPropsType> = (
                 </div>
                 <div className={s.deleteButton}>
                     <IconButton onClick={removeTodoList} color="secondary">
-                        <Delete color="secondary"/>
+                        <Clear color="secondary"/>
                     </IconButton>
                 </div>
                 <AddItem
@@ -94,7 +94,7 @@ type TodoListPropsType = {
     changeTodoListTitleCallBack: (id: string, title: string) => void
     addTaskCallBack: (tid: string, title: string) => void
     removeTaskCallBack: (tid: string, id: string) => void
-    updateTaskCallBack: (tid: string, id: string, title: string, isDone: boolean) => void
+    updateTaskCallBack: (tid: string, id: string, title: string, describe: string, isDone: boolean) => void
 }
 
 type FilterType = 'ALL' | 'ACTIVE' | 'COMPLETE';

@@ -64,7 +64,7 @@ export const removeTaskThunk = createAsyncThunk('remove-task', async (arg: { tod
     }
 });
 
-export const updateTaskThunk = createAsyncThunk('remove-task', async (arg: { todolists: string, tid: string, id: string, title: string, isDone: boolean }, thunkAPI) => {
+export const updateTaskThunk = createAsyncThunk('remove-task', async (arg: { todolists: string, tid: string, id: string, title: string, describe: string, isDone: boolean }, thunkAPI) => {
     try {
         const tl = await taskApi.updateTask({...arg});
         thunkAPI.dispatch(setTodoListsAction(tl.data));
